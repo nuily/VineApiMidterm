@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 vineDataAdapter = new VineDataAdapter(recordList);
                 initViews();
                 Log.d(TAG, "onResponse: " + response);
-//                Log.d(TAG, "onResponse: " + data.getSize());
-//                Log.d(TAG, "onResponse: " + recordList.size());
+                Log.d(TAG, "onResponse: " + data.getSize());
+                Log.d(TAG, "onResponse: " + recordList.size());
 
             }
 
