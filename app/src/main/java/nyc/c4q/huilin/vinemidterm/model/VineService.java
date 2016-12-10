@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface VineService {
 
-    @GET("timelines/users/918753190470619136")
+    @GET("users/918753190470619136")
     Call<VineApi> getVineApi();
 }
