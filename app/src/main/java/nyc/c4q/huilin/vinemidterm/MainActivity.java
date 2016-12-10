@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import java.util.List;
+
 import nyc.c4q.huilin.vinemidterm.model.Data;
+import nyc.c4q.huilin.vinemidterm.model.Record;
 import nyc.c4q.huilin.vinemidterm.model.VineApi;
 import nyc.c4q.huilin.vinemidterm.model.VineService;
 import retrofit2.Call;
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String VINE_URL = "https://vine.co/api/";
     private static final String TAG = "Retrofit Vine";
+    private List<Record> recordList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +43,12 @@ public class MainActivity extends AppCompatActivity {
                 VineApi vineApi = response.body();
                 Data data = vineApi.getData();
 
-//                songList = ourPlaylist.getA();
+                recordList = data.getRecords();
 //
 //                songAdapter = new SongAdapter(songList);
 //                playlistAView.setAdapter(songAdapter);
                 Log.d(TAG, "onResponse: " + data.getSize());
+                Log.d(TAG, "onResponse: " + recordList.size());
 
             }
 
