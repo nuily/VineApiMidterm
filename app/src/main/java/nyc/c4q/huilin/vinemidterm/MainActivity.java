@@ -43,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
 //
 //                songAdapter = new SongAdapter(songList);
 //                playlistAView.setAdapter(songAdapter);
-                Log.d(TAG, "onResponse: " + data.getSize());
+                Log.d(TAG, "onResponse: " + data.getRecords().size());
 
             }
 
             @Override
             public void onFailure(Call<VineApi> call, Throwable t) {
                 Log.d(TAG, "onFailure: Crap");
+                t.printStackTrace();
 
             }
         });
